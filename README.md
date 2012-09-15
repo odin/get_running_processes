@@ -20,11 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-require 'get_running_processes'
+    require 'get_running_processes'
 
-processes = GetRunningProcesses.collect_processes
+    processes = GetRunningProcesses.collect_processes
 
-processes.include?('ps -ef') # true
+    processes.include?('ps -ef')
 
 ## Contributing
 
