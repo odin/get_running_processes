@@ -29,10 +29,6 @@ Or install it yourself as:
 
     processes = GetRunningProcesses.collect_processes
 
-The last process will always be 'ps -ef'
-
-    processes.last.include?('ps -ef')
-
 The format of the output of 'ps -ef' is as follows:
 
     UID        PID  PPID  C STIME TTY          TIME CMD
