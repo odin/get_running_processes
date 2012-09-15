@@ -5,9 +5,9 @@ module GetRunningProcesses
     def self.read_processes
       output = `ps -ef`
 
-      File.open('tmp/ps.csv', 'w') {|f| f.write(output) }
+      File.open('ps.csv', 'w') {|f| f.write(output) }
 
-      file = ('tmp/ps.csv')
+      file = ('ps.csv')
 
       list = CSV.read(file, :col_sep => ' ')
 
@@ -22,7 +22,7 @@ module GetRunningProcesses
         end
       end
 
-      File.delete('tmp/ps.csv')
+      File.delete('ps.csv')
 
       return processes
     end
