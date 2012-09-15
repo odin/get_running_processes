@@ -1,6 +1,8 @@
 # GetRunningProcesses
 
-TODO: Write a gem description
+Gets all of the running processes from a linux system using the output of
+
+    ps -ef
 
 ## Installation
 
@@ -18,7 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+require 'get_running_processes'
+
+processes = GetRunningProcesses.collect
+
+processes.include?('ps -ef') # true
 
 ## Contributing
 
