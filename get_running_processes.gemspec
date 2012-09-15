@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["casey.ellett@gmail.com"]
   gem.description   = %q{Get running processes on a linux system through the output of 'ps -ef'}
   gem.summary       = %q{Get running processes from ps}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/odin/get_running_processes"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
