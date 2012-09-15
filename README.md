@@ -24,7 +24,9 @@ Or install it yourself as:
 
     processes = GetRunningProcesses.collect_processes
 
-    processes.include?('ps -ef')
+The last process will always be 'ps -ef'
+
+    processes.last.include?('ps -ef')
 
 ## Contributing
 
