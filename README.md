@@ -33,6 +33,15 @@ The last process will always be 'ps -ef'
 
     processes.last.include?('ps -ef')
 
+The format of the output of 'ps -ef' is as follows:
+
+    UID        PID  PPID  C STIME TTY          TIME CMD
+    root         1     0  0 Sep12 ?        00:00:00 /sbin/init
+
+The return value of GetRunningProcesses.collect_processes is an Array of Arrays:
+
+    [["root", "1", "0", "0", "Sep12", "?", "00:00:00", "/sbin/init"]]
+
 ## Contributing
 
 1. Fork it
