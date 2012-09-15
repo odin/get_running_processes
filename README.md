@@ -22,7 +22,7 @@ Or install it yourself as:
 
 require 'get_running_processes'
 
-processes = GetRunningProcesses.collect
+processes = GetRunningProcesses.collect_processes
 
 processes.include?('ps -ef') # true
 
