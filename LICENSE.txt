@@ -1,4 +1,4 @@
-Copyright (c) 2012 Casey Ellett
+Copyright (c) 2012 odin (Casey Ellett)
 
 MIT License
 
