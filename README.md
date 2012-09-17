@@ -27,16 +27,33 @@ Or install it yourself as:
 
     require 'get_running_processes'
 
-    processes = GetRunningProcesses.collect_processes
-
 The format of the output of 'ps -ef' is as follows:
 
     UID        PID  PPID  C STIME TTY          TIME CMD
     root         1     0  0 Sep12 ?        00:00:00 /sbin/init
 
-The return value of GetRunningProcesses.collect_processes is an Array of Arrays:
+The most simple output: 
 
-    [["root", "1", "0", "0", "Sep12", "?", "00:00:00", "/sbin/init"]]
+    processes = GetRunningProcesses.collect_processes
+
+    => [["root", "1", "0", "0", "Sep12", "?", "00:00:00", "/sbin/init"]]
+    
+Other output:
+
+    processes = GetRunningProcesses.processes
+    
+    processes.all
+    
+    => [{"UID"=>"root", "PID"=>"1", "PPID"=>"0", "C"=>"0", "STIME"=>"09:01", "TTY"=>"?", "TIME"=>"00:00:03", "CMD"=>"/sbin/init"}]
+
+    processes.commands
+    
+    => ["/sbin/init"]
+    
+    processes.commands_with_pids
+    
+    => [{1 => "/sbin/init"}]
+
 
 ## Contributing
 
