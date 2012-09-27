@@ -48,7 +48,7 @@ processes = GetRunningProcesses.processes
 
 processes.all
 
-#=> [{"UID"=>"root", "PID"=>1, "PPID"=>"0", "C"=>"0", "STIME"=>"09:01", "TTY"=>"?", "TIME"=>"00:00:03", "CMD"=>"/sbin/init"}]
+#=> [{"UID"=>"root", "PID"=>1, "PPID"=>0, "C"=>"0", "STIME"=>"09:01", "TTY"=>"?", "TIME"=>"00:00:03", "CMD"=>"/sbin/init"}]
 
 processes.commands
 
