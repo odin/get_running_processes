@@ -56,6 +56,10 @@ processes.commands
 
 processes.commands_with_pids
 
+#=> [{"/sbin/init" => 1}]
+
+processes.pids_with_commands
+
 #=> [{1 => "/sbin/init"}]
 ```
 

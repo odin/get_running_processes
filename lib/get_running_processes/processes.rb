@@ -1,38 +1,14 @@
 module GetRunningProcesses
   class Processes
-    attr_reader :commands,
+    attr_reader :all,
+                :commands,
                 :commands_with_pids,
-                :all
+                :pids_with_commands
 
     def initialize
       @all                = self.get_all
       @commands           = self.get_commands
       @commands_with_pids = self.get_commands_with_pids
-    end
-
-    def get_commands
-      processes = self.get_process_array
-      commands  = []
-
-      processes.each do |process|
-        commands << process[7]
-      end
-
-      return commands
-    end
-
-    def get_commands_with_pids
-      processes          = self.get_process_array
-      commands_with_pids = []
-
-      processes.each do |process|
-        command                  = {}
-        command[process[1].to_i] = process[7]
-
-        commands_with_pids << command
-      end
-
-      return commands_with_pids
     end
 
     def get_all
@@ -55,6 +31,45 @@ module GetRunningProcesses
       end
 
       return all
+    end
+
+    def get_commands
+      processes = self.get_process_array
+      commands  = []
+
+      processes.each do |process|
+        commands << process[7]
+      end
+
+      return commands
+    end
+
+    def get_commands_with_pids
+      processes          = self.get_process_array
+      commands_with_pids = []
+
+      processes.each do |process|
+        command                  = {}
+        command[process[7]] = process[1].to_i
+
+        commands_with_pids << command
+      end
+
+      return commands_with_pids
+    end
+
+    def pids_with_commands
+      processes          = self.get_process_array
+      pids_with_commands = []
+
+      processes.each do |process|
+        command                  = {}
+        command[process[1].to_i] = process[7]
+
+        pids_with_commands << command
+      end
+
+      return pids_with_commands
     end
 
     def get_process_array
